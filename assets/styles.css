@@ -164,7 +164,6 @@ section{position:relative;padding-block:var(--step)}
   font-size:.75rem;letter-spacing:.34em;text-transform:uppercase;
   font-family:Inter,sans-serif;font-weight:600;color:var(--crema-deep);
 }
-.section-note{margin:-.4rem 0 2.4rem;font-size:.86rem;color:var(--ink-soft);max-width:52ch}
 .lead{
   font-family:Fraunces,Georgia,serif;font-variation-settings:"opsz" 90;
   font-size:clamp(1.4rem,1.1rem + 1.5vw,2.15rem);line-height:1.24;font-weight:500;
@@ -196,7 +195,7 @@ section{position:relative;padding-block:var(--step)}
   will-change:transform;
 }
 .carte .wrap{position:relative;z-index:1}
-.carte__grid{display:grid;gap:1.15rem;grid-template-columns:1fr}
+.carte__grid{display:grid;gap:1.15rem;grid-template-columns:1fr;margin-top:2.3rem}
 .card{
   background:var(--paper);border:1px solid var(--rule);border-radius:2px;
   padding:1.7rem 1.6rem 1.9rem;box-shadow:var(--shadow);
@@ -259,8 +258,7 @@ section{position:relative;padding-block:var(--step)}
 }
 
 .avis{background:var(--ink);color:var(--paper)}
-.avis .section-note{color:rgba(251,246,236,.62)}
-.avis__grid{display:grid;gap:1.15rem;grid-template-columns:1fr}
+.avis__grid{display:grid;gap:1.15rem;grid-template-columns:1fr;margin-top:2.3rem}
 .clip{
   margin:0;padding:1.8rem 1.6rem;
   background:rgba(251,246,236,.055);
