@@ -96,6 +96,21 @@
       refreshParallax();
       if (!reduced.matches) video.play().catch(function () {});
     });
+
+    // The film tells a story and ends on the finished cup, so it does not loop.
+    // Replay it whenever the hero comes back into view.
+    if ('IntersectionObserver' in window) {
+      var replay = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || reduced.matches) return;
+          if (video.ended || video.currentTime > video.duration - 0.1) {
+            video.currentTime = 0;
+          }
+          video.play().catch(function () {});
+        });
+      }, { threshold: 0.55 });
+      replay.observe(video);
+    }
   }
 
   /* ---- today's row + open/closed badge, in Paris time ---- */
