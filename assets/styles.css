@@ -297,7 +297,13 @@ section{position:relative;padding-block:var(--step)}
 .hours tr[data-today]{color:var(--crema-deep)}
 .hours tr[data-today] th,.hours tr[data-today] td{font-weight:700;border-bottom-color:var(--crema)}
 address{font-style:normal;font-size:1.15rem;line-height:1.7;margin-bottom:1.4rem}
-address .muted{font-size:.85rem}
+.tel{
+  display:inline-block;margin-top:.5rem;
+  font-variant-numeric:tabular-nums;
+  text-decoration-thickness:1px;text-underline-offset:4px;
+  text-decoration-color:var(--crema);
+}
+.tel:hover{color:var(--crema-deep)}
 
 .foot{background:var(--ink);color:var(--paper);padding-block:clamp(3rem,6vw,4.5rem)}
 .foot__grid{display:grid;gap:2rem;grid-template-columns:1fr;font-size:.9rem}
