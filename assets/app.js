@@ -97,19 +97,17 @@
       if (!reduced.matches) video.play().catch(function () {});
     });
 
-    // The film tells a story and ends on the finished cup, so it does not loop.
-    // Replay it whenever the hero comes back into view.
+    // The film loops through a dip to black, so it only needs nudging back
+    // into playback when the hero scrolls into view again.
     if ('IntersectionObserver' in window) {
-      var replay = new IntersectionObserver(function (entries) {
+      var resume = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (!entry.isIntersecting || reduced.matches) return;
-          if (video.ended || video.currentTime > video.duration - 0.1) {
-            video.currentTime = 0;
+          if (entry.isIntersecting && !reduced.matches) {
+            video.play().catch(function () {});
           }
-          video.play().catch(function () {});
         });
-      }, { threshold: 0.55 });
-      replay.observe(video);
+      }, { threshold: 0.4 });
+      resume.observe(video);
     }
   }
 
