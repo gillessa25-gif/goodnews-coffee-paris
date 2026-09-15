@@ -163,7 +163,8 @@ sup{font-size:.6em;vertical-align:.45em}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- sections ---------- */
-section{position:relative;padding-block:var(--step)}
+main > section{position:relative;padding-block:var(--step)}
+.menu__block{padding-block:0}
 .kicker,.section-title{
   font-family:Fraunces,Georgia,serif;font-variation-settings:"opsz" 60;
   font-weight:600;letter-spacing:-.01em;margin:0 0 1.1rem;
@@ -204,32 +205,32 @@ section{position:relative;padding-block:var(--step)}
   will-change:transform;
 }
 .carte .wrap{position:relative;z-index:1}
-.menu{display:grid;gap:2.6rem 2.8rem;grid-template-columns:1fr;margin-top:1.9rem}
+.menu{display:grid;gap:2rem 2.8rem;grid-template-columns:1fr;margin-top:1.05rem}
 .menu__key{margin:0 0 .2rem;font-size:.98rem;color:var(--ink-soft);max-width:52ch}
 .menu__block h3{
-  margin:0 0 .35rem;padding-bottom:.55rem;border-bottom:2px solid var(--ink);
+  margin:0 0 .2rem;padding-bottom:.5rem;border-bottom:2px solid var(--ink);
   font-family:Fraunces,Georgia,serif;font-variation-settings:"opsz" 60;
   font-size:1.45rem;font-weight:600;letter-spacing:-.01em;
 }
 .menu__block ul{list-style:none;margin:0;padding:0}
 .menu__block li{
   display:flex;justify-content:space-between;align-items:baseline;gap:1.4rem;
-  padding:.72rem 0;border-bottom:1px solid var(--rule);
+  padding:.46rem 0;border-bottom:1px solid var(--rule);
 }
 .menu__block li:last-child{border-bottom:0}
 .item{display:block;max-width:26ch}
 .item i{
-  display:block;font-style:italic;font-size:.9rem;line-height:1.45;
-  color:var(--ink-soft);margin-top:.12rem;
+  display:block;font-style:italic;font-size:.875rem;line-height:1.32;
+  color:var(--ink-soft);margin-top:.04rem;
 }
 .price{
   white-space:nowrap;text-align:right;
   font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;
-  font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.35;
+  font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.28;
 }
 
 .weekend{
-  margin-top:3.2rem;background:var(--ink);color:var(--paper);
+  margin-top:2.6rem;background:var(--ink);color:var(--paper);
   border-radius:3px;padding:2rem 1.7rem 2.2rem;box-shadow:var(--shadow);
 }
 .weekend__head{
@@ -253,7 +254,7 @@ section{position:relative;padding-block:var(--step)}
 .weekend ul{list-style:none;margin:0;padding:0}
 .weekend li{
   display:flex;justify-content:space-between;align-items:baseline;gap:1.4rem;
-  padding:.8rem 0;border-bottom:1px solid rgba(251,246,236,.18);
+  padding:.58rem 0;border-bottom:1px solid rgba(251,246,236,.18);
 }
 .weekend li:last-child{border-bottom:0}
 .weekend .item{max-width:34ch}
