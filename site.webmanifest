@@ -6,7 +6,7 @@
   "start_url": "./",
   "display": "standalone",
   "background_color": "#F2EADC",
-  "theme_color": "#14232A",
+  "theme_color": "#16293A",
   "icons": [
     { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png" },
     { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }

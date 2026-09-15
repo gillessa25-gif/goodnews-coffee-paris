@@ -11,7 +11,7 @@ DIDOT = "/System/Library/Fonts/Supplemental/Didot.ttc"
 GEORGIA = "/System/Library/Fonts/Supplemental/Georgia.ttf"
 HELVETICA = "/System/Library/Fonts/Helvetica.ttc"
 
-INK = (20, 35, 42)
+INK = (22, 41, 58)
 PAPER = (251, 246, 236)
 CREMA = (192, 122, 46)
 
@@ -70,7 +70,7 @@ def make_og(path, frame_path, width=1200, height=630):
     top = (shot.height - height) // 2
     card = shot.crop((left, top, left + width, top + height))
 
-    scrim = Image.new("RGB", (width, height), (11, 23, 28))
+    scrim = Image.new("RGB", (width, height), (12, 24, 36))
     card = Image.blend(card, scrim, 0.46)
 
     d = ImageDraw.Draw(card)
@@ -94,7 +94,7 @@ def main():
     make_grain(os.path.join(ASSETS, "grain.png"))
     make_icon(os.path.join(ASSETS, "icon-180.png"), 180)
     make_icon(os.path.join(ASSETS, "icon-512.png"), 512)
-    make_og(os.path.join(ASSETS, "og.jpg"), os.path.join(ASSETS, "hero-poster.jpg"))
+    make_og(os.path.join(ASSETS, "og.jpg"), os.environ.get("OG_SOURCE", os.path.join(ASSETS, "hero-poster.jpg")))
     print("assets written")
 
 
