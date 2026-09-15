@@ -31,8 +31,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-poster.jpg" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Inter:wght@300..700&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=11">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..700;1,400..600&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&display=swap">
+<link rel="stylesheet" href="assets/styles.css?v=12">
 </head>
 <body>
 <a class="skip" href="#edito">Aller au contenu</a>
@@ -114,42 +114,47 @@
   <div class="wrap">
     <h2 class="section-title reveal">La carte</h2>
 
-    <div class="carte__grid">
-      <article class="card reveal">
-        <h3>Coffee</h3>
+    <p class="menu__key reveal">Deux tailles sur certaines boissons : M pour moyen, G pour grand.</p>
+
+    <div class="menu">
+      <section class="menu__block reveal">
+        <h3>Café</h3>
         <ul>
-          <li><span class="item">Espresso / Allongé<i>1 shot</i></span><span class="price">2,50 €</span></li>
+          <li><span class="item">Espresso ou allongé<i>1 shot</i></span><span class="price">2,50 €</span></li>
           <li><span class="item">Double espresso</span><span class="price">3,50 €</span></li>
           <li><span class="item">Long black<i>2 shots</i></span><span class="price">3,50 €</span></li>
           <li><span class="item">Cortado<i>1 shot</i></span><span class="price">3,50 €</span></li>
           <li><span class="item">Cappuccino<i>1 shot</i></span><span class="price">4,50 €</span></li>
           <li><span class="item">Flat white<i>2 shots</i></span><span class="price">5 €</span></li>
-          <li><span class="item">Latte<i>1 shot</i></span><span class="price">5,50 € M · 6,50 € G</span></li>
+          <li><span class="item">Latte<i>1 shot</i></span><span class="price">5,50 € M<br>6,50 € G</span></li>
           <li><span class="item">Batch brew</span><span class="price">4 €</span></li>
-          <li><span class="item">V60 / Aeropress</span><span class="price">6 €</span></li>
+          <li><span class="item">V60 ou Aeropress</span><span class="price">6 €</span></li>
           <li><span class="item">Lait d'avoine</span><span class="price">0,50 €</span></li>
         </ul>
-      </article>
+      </section>
 
-      <article class="card reveal">
-        <h3>Cold coffee</h3>
+      <section class="menu__block reveal">
+        <h3>Café glacé</h3>
         <ul>
           <li><span class="item">Café glacé</span><span class="price">4 €</span></li>
-          <li><span class="item">Cold brew / Espresso tonic<i>2 shots</i></span><span class="price">5,50 €</span></li>
+          <li><span class="item">Cold brew ou espresso tonic<i>2 shots</i></span><span class="price">5,50 €</span></li>
           <li><span class="item">Latte glacé</span><span class="price">5,50 €</span></li>
-          <li><span class="item">Chaï / Golden / Matcha glacé</span><span class="price">6 €</span></li>
+          <li><span class="item">Chaï, golden ou matcha glacé</span><span class="price">6 €</span></li>
         </ul>
-        <h4>Not coffee</h4>
-        <ul>
-          <li><span class="item">Thés vert, noir, english · Infusion rooibos</span><span class="price">4,50 €</span></li>
-          <li><span class="item">Chocolat chaud<i>50 % Cacao Barry</i></span><span class="price">5 € M · 6 € G</span></li>
-          <li><span class="item">Matcha latte</span><span class="price">5,50 € M · 6,50 € G</span></li>
-          <li><span class="item">Golden latte<i>lait d'avoine</i></span><span class="price">5,50 € M · 6,50 € G</span></li>
-          <li><span class="item">Chaï latte<i>lait d'avoine</i></span><span class="price">5,50 € M · 6,50 € G</span></li>
-        </ul>
-      </article>
+      </section>
 
-      <article class="card reveal">
+      <section class="menu__block reveal">
+        <h3>Sans café</h3>
+        <ul>
+          <li><span class="item">Thé vert, noir ou english<i>infusion rooibos également</i></span><span class="price">4,50 €</span></li>
+          <li><span class="item">Chocolat chaud<i>50 % Cacao Barry</i></span><span class="price">5 € M<br>6 € G</span></li>
+          <li><span class="item">Matcha latte</span><span class="price">5,50 € M<br>6,50 € G</span></li>
+          <li><span class="item">Golden latte<i>lait d'avoine</i></span><span class="price">5,50 € M<br>6,50 € G</span></li>
+          <li><span class="item">Chaï latte<i>lait d'avoine</i></span><span class="price">5,50 € M<br>6,50 € G</span></li>
+        </ul>
+      </section>
+
+      <section class="menu__block reveal">
         <h3>Boissons fraîches</h3>
         <ul>
           <li><span class="item">Perrier</span><span class="price">3,50 €</span></li>
@@ -159,15 +164,18 @@
           <li><span class="item">Community Cola<i>original ou sans sucre</i></span><span class="price">6 €</span></li>
           <li><span class="item">Kombucha</span><span class="price">6,50 €</span></li>
         </ul>
-        <h4>Bière · Cidre · Vin nature</h4>
+      </section>
+
+      <section class="menu__block reveal">
+        <h3>Bière, cidre et vin</h3>
         <ul>
           <li><span class="item">Pilsner</span><span class="price">7,40 €</span></li>
-          <li><span class="item">Pale Ale</span><span class="price">7,70 €</span></li>
+          <li><span class="item">Pale ale</span><span class="price">7,70 €</span></li>
           <li><span class="item">Cidre</span><span class="price">7,40 €</span></li>
-          <li><span class="item">Vin nature<i>verre 15 cl</i></span><span class="price">8,50 €</span></li>
-          <li><span class="item">Vin nature<i>bouteille 75 cl</i></span><span class="price">37 €</span></li>
+          <li><span class="item">Vin nature<i>verre de 15 cl</i></span><span class="price">8,50 €</span></li>
+          <li><span class="item">Vin nature<i>bouteille de 75 cl</i></span><span class="price">37 €</span></li>
         </ul>
-      </article>
+      </section>
     </div>
 
     <article class="weekend reveal">
@@ -179,17 +187,17 @@
         <div>
           <h4>Entrées</h4>
           <ul>
-            <li><span class="item">Granola maison, yaourt grec, fruit de saison</span><span class="price">6 € petit · 9,50 € grand</span></li>
+            <li><span class="item">Granola maison, yaourt grec, fruit de saison</span><span class="price">6 € petit<br>9,50 € grand</span></li>
             <li><span class="item">Chia bol au lait d'avoine, noix torréfiées, fruit de saison</span><span class="price">7,50 €</span></li>
           </ul>
         </div>
         <div>
           <h4>Plats</h4>
           <ul>
-            <li><span class="item">Bagel Bénédicte Nordique<i>saumon fumé, philadelphia, avocat, concombre, laitue iceberg, sauce hollandaise — servi avec salade sauce miel-moutarde, ou pommes de terre rôties aux herbes</i></span><span class="price">18 € · 19 €</span></li>
+            <li><span class="item">Bagel Bénédicte Nordique<i>saumon fumé, philadelphia, avocat, concombre, laitue iceberg, sauce hollandaise. Servi avec salade et sauce miel-moutarde (18 €) ou pommes de terre rôties aux herbes (19 €)</i></span><span class="price">18–19 €</span></li>
             <li><span class="item">Tartine d'avocat<i>pain de campagne grillé, avocat tranché, feta, grenade, granola salé et sauce mangue-soja, servie avec salade</i></span><span class="price">11 €</span></li>
           </ul>
-          <p class="weekend__extra">Suppléments : œuf poché 2,50 € · bacon 3,50 €</p>
+          <p class="weekend__extra">Suppléments : œuf poché 2,50 €, bacon 3,50 €</p>
         </div>
       </div>
     </article>
@@ -305,6 +313,6 @@
   ]
 }
 </script>
-<script src="assets/app.js?v=11" defer></script>
+<script src="assets/app.js?v=12" defer></script>
 </body>
 </html>
