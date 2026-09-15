@@ -61,7 +61,7 @@ sup{font-size:.6em;vertical-align:.45em}
 .hero__grain{
   z-index:2;inset:0;
   background-image:url("grain.png");
-  background-size:180px 180px;
+  background-size:128px 128px;
   opacity:.30;mix-blend-mode:overlay;pointer-events:none;
 }
 .hero__inner{
@@ -189,8 +189,10 @@ section{position:relative;padding-block:var(--step)}
 .carte{background:var(--newsprint);overflow:hidden}
 .carte__bg{
   position:absolute;inset:-20% -10%;z-index:0;pointer-events:none;
-  background:url("paper.png") repeat, radial-gradient(60% 50% at 78% 12%, rgba(193,118,44,.16), transparent 70%);
-  background-size:520px 520px, cover;opacity:.5;will-change:transform;
+  background:
+    radial-gradient(58% 48% at 78% 10%, rgba(192,122,46,.22), transparent 70%),
+    radial-gradient(46% 40% at 10% 88%, rgba(92,122,94,.16), transparent 72%);
+  will-change:transform;
 }
 .carte .wrap{position:relative;z-index:1}
 .carte__grid{display:grid;gap:1.15rem;grid-template-columns:1fr}

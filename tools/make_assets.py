@@ -30,37 +30,14 @@ def sans(size, index=0):
         return ImageFont.load_default()
 
 
-def tileable_noise(size, scale, seed):
-    """Noise that wraps at the edges, so the texture tiles cleanly."""
-    rng = np.random.default_rng(seed)
-    small = rng.random((size // scale, size // scale)).astype(np.float32)
-    small = np.concatenate([small, small[:2]], axis=0)
-    small = np.concatenate([small, small[:, :2]], axis=1)
-    img = Image.fromarray((small * 255).astype(np.uint8)).resize((size + scale * 2,) * 2, Image.BICUBIC)
-    img = img.filter(ImageFilter.GaussianBlur(scale * 0.35)).crop((0, 0, size, size))
-    return np.asarray(img).astype(np.float32) / 255.0
-
-
-def make_grain(path, size=180):
+def make_grain(path, size=128):
     rng = np.random.default_rng(7)
     noise = rng.normal(0.5, 0.11, (size, size)).clip(0, 1)
     fine = np.asarray(
         Image.fromarray((noise * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.4))
     ).astype(np.float32) / 255.0
     out = (fine * 255).astype(np.uint8)
-    Image.fromarray(np.dstack([out] * 3)).save(path, optimize=True)
-
-
-def make_paper(path, size=340):
-    base = tileable_noise(size, 10, 11) * 0.55 + tileable_noise(size, 4, 12) * 0.45
-    fibres = tileable_noise(size, 2, 13)
-    field = 0.90 + 0.10 * base + 0.045 * (fibres - 0.5)
-    rgb = np.dstack([
-        np.clip(field * PAPER[0], 0, 255),
-        np.clip(field * PAPER[1], 0, 255),
-        np.clip(field * PAPER[2], 0, 255),
-    ]).astype(np.uint8)
-    Image.fromarray(rgb).save(path, optimize=True)
+    Image.fromarray(out, mode="L").save(path, optimize=True)
 
 
 def draw_seal(canvas, cx, cy, r, ink=INK, crema=CREMA, cream=PAPER):
@@ -115,7 +92,6 @@ def make_og(path, frame_path, width=1200, height=630):
 
 def main():
     make_grain(os.path.join(ASSETS, "grain.png"))
-    make_paper(os.path.join(ASSETS, "paper.png"))
     make_icon(os.path.join(ASSETS, "icon-180.png"), 180)
     make_icon(os.path.join(ASSETS, "icon-512.png"), 512)
     make_og(os.path.join(ASSETS, "og.jpg"), os.path.join(ASSETS, "hero-poster.jpg"))
