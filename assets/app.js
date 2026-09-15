@@ -17,7 +17,12 @@
       var box = host.getBoundingClientRect();
       if (box.bottom < -viewport * 0.5 || box.top > viewport * 1.5) continue;
       var progress = (box.top + box.height / 2 - viewport / 2) / viewport;
-      var shift = progress * parseFloat(el.dataset.depth) * viewport * -0.5;
+      var range = viewport * 0.5;
+      var shift = progress * parseFloat(el.dataset.depth) * range * -1;
+      // never push a backdrop past its own section, whatever the viewport
+      var limit = box.height * 0.18;
+      if (shift > limit) shift = limit;
+      if (shift < -limit) shift = -limit;
       el.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0)';
     }
   }
