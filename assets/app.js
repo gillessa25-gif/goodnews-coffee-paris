@@ -29,6 +29,13 @@
     }
   }
 
+  // A hidden tab never runs requestAnimationFrame, which would leave `ticking`
+  // stuck true and freeze the layers for good. Clear it when we come back.
+  function refreshParallax() {
+    ticking = false;
+    if (!reduced.matches) place();
+  }
+
   function startParallax() {
     if (reduced.matches) {
       layers.forEach(function (el) { el.style.transform = ''; });
@@ -82,8 +89,12 @@
       });
     }
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) video.pause();
-      else if (!reduced.matches) video.play().catch(function () {});
+      if (document.hidden) {
+        video.pause();
+        return;
+      }
+      refreshParallax();
+      if (!reduced.matches) video.play().catch(function () {});
     });
   }
 
@@ -122,6 +133,10 @@
     badge.setAttribute('data-open', String(open));
     badge.textContent = open ? 'Ouvert maintenant · ferme à 17 h' : 'Fermé actuellement';
   }
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) refreshParallax();
+  });
 
   function boot() {
     startParallax();
