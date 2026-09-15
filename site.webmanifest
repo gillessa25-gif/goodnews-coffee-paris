@@ -1,0 +1,14 @@
+{
+  "name": "Good News Coffee Shop",
+  "short_name": "Good News",
+  "description": "Café de spécialité, 27 bis rue Mademoiselle, Paris 15e.",
+  "lang": "fr",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F2EADC",
+  "theme_color": "#14232A",
+  "icons": [
+    { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

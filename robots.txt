@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gillessa25-gif.github.io/goodnews-coffee-paris/sitemap.xml
